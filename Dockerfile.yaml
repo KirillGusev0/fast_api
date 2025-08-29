@@ -10,7 +10,6 @@ WORKDIR /app
 # Подтягиваем зависимости
 COPY requirements.txt .
 
-# Установим зависимости
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копирование кода
@@ -18,4 +17,5 @@ COPY ./app ./app
 
 # Запуск uvicorn сервера
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
 
